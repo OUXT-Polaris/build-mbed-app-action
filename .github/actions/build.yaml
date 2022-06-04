@@ -1,0 +1,22 @@
+name: spell-check
+description: ""
+
+inputs:
+  target_board:
+    description: target board name
+    required: true
+  toolchain:
+    description: compile toolchain
+    required: false
+    default: GCC_ARM
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout dependency
+      run: mbed-tools deploy
+      shell: bash
+
+    - name: Compile project
+      run: mbed-tools compile -t ${{ inputs.toolchain }} -m ${{ inputs.target_board }}
+      shell: bash
