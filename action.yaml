@@ -1,6 +1,10 @@
 name: build-mbed-app-action
 description: "github actions for mbed application"
 
+branding:
+  icon: box
+  color: blue
+
 inputs:
   target_board:
     description: target board name
