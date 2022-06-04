@@ -12,7 +12,10 @@ on:
     - cron: 0 0 * * *
   pull_request:
   workflow_dispatch:
-
+  push:
+    branches:
+      - master
+      
 jobs:
   publish:
     runs-on: ubuntu-latest
