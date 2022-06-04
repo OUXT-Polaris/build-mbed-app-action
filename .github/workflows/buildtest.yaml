@@ -1,4 +1,10 @@
-on: [push]
+name: BuildTest
+
+on:
+  schedule:
+    - cron: 0 0 * * *
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   publish:
@@ -9,3 +15,6 @@ jobs:
         with:
           repository: ARMmbed/mbed-os-example-blinky
       - uses: OUXT-Polaris/build-mbed-app-action@master
+        with:
+          target_board: DISCO_L475VG_IOT01A
+          toolchain: GCC_ARM

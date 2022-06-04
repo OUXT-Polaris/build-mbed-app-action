@@ -1,5 +1,5 @@
-name: spell-check
-description: ""
+name: build-mbed-app-action
+description: "github actions for mbed application"
 
 inputs:
   target_board:
