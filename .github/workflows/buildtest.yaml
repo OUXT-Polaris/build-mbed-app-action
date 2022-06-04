@@ -14,9 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     container: ghcr.io/armmbed/mbed-os-env
     strategy:
+      fail-fast: false
       matrix:
         target_board:
-        - NUCLEO-F767ZI
+        - NUCLEO_F767ZI
         - DISCO_L475VG_IOT01A
         - LPC1768
     steps:
