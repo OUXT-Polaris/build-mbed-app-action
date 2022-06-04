@@ -10,14 +10,21 @@ on:
       - master
 
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
     container: ghcr.io/armmbed/mbed-os-env
+    strategy:
+      fail-fast: false
+      matrix:
+        target_board:
+        - NUCLEO_F767ZI
+        - DISCO_L475VG_IOT01A
+        - LPC1768
     steps:
       - uses: actions/checkout@v3
         with:
           repository: ARMmbed/mbed-os-example-blinky
       - uses: OUXT-Polaris/build-mbed-app-action@master
         with:
-          target_board: DISCO_L475VG_IOT01A
+          target_board: ${{ matrix.target_board }}
           toolchain: GCC_ARM
