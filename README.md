@@ -1,5 +1,7 @@
 # github actions for mbed application
 
+[![BuildTest](https://github.com/OUXT-Polaris/build-mbed-app-action/actions/workflows/buildtest.yaml/badge.svg)](https://github.com/OUXT-Polaris/build-mbed-app-action/actions/workflows/buildtest.yaml)
+
 ## How to use
 
 ```
