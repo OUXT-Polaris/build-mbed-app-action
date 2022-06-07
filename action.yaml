@@ -20,7 +20,9 @@ runs:
     - name: Checkout dependency
       run: mbed-tools deploy
       shell: bash
-
+    - name: Compile project
+      run: mbed-tools configure -t ${{ inputs.toolchain }} -m ${{ inputs.target_board }}
+      shell: bash
     - name: Compile project
       run: mbed-tools compile -t ${{ inputs.toolchain }} -m ${{ inputs.target_board }}
       shell: bash
